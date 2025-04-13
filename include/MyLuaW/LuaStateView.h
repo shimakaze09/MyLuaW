@@ -13,8 +13,6 @@ class LuaStateView {
 
   lua_State* GetState() { return L; }
 
-  LuaStateView* operator->() { return this; }
-
   operator lua_State*() { return L; }
 
   //
@@ -182,7 +180,7 @@ class LuaStateView {
   void unref(int t, int ref);
   void where(int lvl);
 
- private:
+ protected:
   lua_State* L;
 };
 }  // namespace My
