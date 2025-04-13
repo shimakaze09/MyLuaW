@@ -15,4 +15,6 @@ ADD_TARGET(
         "${PROJECT_SOURCE_DIR}/include"
         LIB
         My::MyLua_core
+        C_OPTION_PRIVATE
+        ${c_options}
 )

@@ -22,6 +22,18 @@ class LuaState {
   LuaState(std::shared_ptr<lua_State> L, std::shared_ptr<lua_State> main);
   LuaState(std::shared_ptr<lua_State> L);
 
+  std::shared_ptr<lua_State> GetState() { return L; }
+
+  std::shared_ptr<lua_State> GetMainState() { return main; }
+
+  lua_State* GetRawState() { return L.get(); }
+
+  lua_State* GetRawMainState() { return main.get(); }
+
+  //
+  // Lua raw API
+  ////////////////
+
   int absindex(int idx);
   void arith(int op);
   lua_CFunction atpanic(lua_CFunction panicf);
