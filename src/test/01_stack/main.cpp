@@ -4,7 +4,7 @@
 
 using namespace My;
 
-static void stackDump(LuaState L) {
+static void stackDump(LuaStateView L) {
   int i;
   int top = L.gettop();        /* depth of the stack */
   for (i = 1; i <= top; i++) { /* repeat for each level */
