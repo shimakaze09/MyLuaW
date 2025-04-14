@@ -33,7 +33,9 @@ class LuaRef {
   LuaRef& operator=(const LuaRef&) = delete;
 
   LuaRef& operator=(LuaRef&& rhs) noexcept {
-    std::swap(*this, rhs);
+    std::swap(L, rhs.L);
+    std::swap(t, rhs.t);
+    std::swap(ref, rhs.ref);
     return *this;
   }
 
