@@ -577,14 +577,6 @@ int LuaStateView::loadstring(const char* s) {
   return luaL_loadstring(L, s);
 }
 
-void LuaStateView::newlib(const luaL_Reg l[]) {
-  luaL_newlib(L, l);
-}
-
-void LuaStateView::newlibtable(const luaL_Reg l[]) {
-  luaL_newlibtable(L, l);
-}
-
 int LuaStateView::newmetatable(const char* tname) {
   return luaL_newmetatable(L, tname);
 }
